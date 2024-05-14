@@ -1,0 +1,43 @@
+#topbar {
+    background: #128ea6;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+    color: #fff;
+  }
+  
+  #topbar.topbar-scrolled {
+    top: -40px;
+  }
+  
+  #topbar .contact-info a {
+    line-height: 1;
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  #topbar .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  #topbar .contact-info i {
+    padding-right: 4px;
+    margin-left: 15px;
+  }
+  
+  #topbar .contact-info i:first-child {
+    margin-left: 0;
+  }
+  
+  #topbar .social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+  
+  #topbar .social-links a:hover {
+    color: #fff;
+  }
+  
