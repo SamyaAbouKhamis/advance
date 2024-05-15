@@ -10,9 +10,13 @@ import { FeaturedComponent } from './featured/featured.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 export const routes: Routes = [
+
+
     {'path':'', component:TopbarComponent},
+
     {'path':'header', component:HeaderComponent},
     {'path':'hero', component:HeroComponent},
     {'path':'featured', component:FeaturedComponent},

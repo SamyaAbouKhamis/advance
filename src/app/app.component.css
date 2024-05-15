@@ -1,0 +1,11 @@
+.img{
+    justify-items: center;
+}
+.spinner-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10vh; /* Set the container height to the full viewport height */
+
+  }
+  
