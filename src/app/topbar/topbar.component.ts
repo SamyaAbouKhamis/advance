@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -8,19 +8,18 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 
 
+
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [FontAwesomeModule,MatIconModule ],
+  imports: [FontAwesomeModule, MatIconModule],
   templateUrl: './topbar.component.html',
-  styleUrl: './topbar.component.css'
+  styleUrl: './topbar.component.css',
 })
 export class TopbarComponent {
- 
-  faFacebook=faFacebook;
+  faFacebook = faFacebook;
   faInstagram = faInstagram;
   envelopeIcon: IconDefinition = faEnvelope;
   phoneIcon: IconDefinition = faPhone;
-
-
+ 
 }
