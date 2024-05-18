@@ -1,30 +1,33 @@
 <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center" style="display: flex;">
+  <div class="container d-flex align-items-center" style="display: flex">
+    <h1 class="logo mr-auto">
+      <a href="http://advance-solution.org/index.html">
+        <img src="../../assets/advance-logo_1.png" />
+      </a>
+    </h1>
+    <!--Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
-      <h1 class="logo mr-auto">
-        <a href="http://advance-solution.org/index.html">
-          <img src="../../assets/advance-logo_1.png">
-        </a>
-      </h1>
-        <!--Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="http://advance-solution.org/index.html">Home</a></li>
-          <li><a href="http://advance-solution.org/#about">About</a></li>
-          <li><a href="http://advance-solution.org/#services">Services</a></li>
-          <li><a href="http://advance-solution.org/#portfolio">Portfolio</a></li>
-          <li><a href="http://advance-solution.org/#contact">Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-    
-
-
-
-
-
-    
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li class="active">
+          <a href="http://advance-solution.org/index.html">{{
+            "Home" | translate
+          }}</a>
+        </li>
+        <li><a href="http://advance-solution.org/#about"> {{'About'|translate}}</a></li>
+        <li><a href="http://advance-solution.org/#services">{{'Services'|translate}}</a></li>
+        <li><a href="http://advance-solution.org/#portfolio">{{'Portfolio'|translate}}</a></li>
+        <li><a href="http://advance-solution.org/#contact">{{'Contact'|translate}}</a></li>
+      </ul>
+    </nav>
+    <!-- .nav-menu -->
+    <mat-form-field>
+      <mat-label>{{'Language'|translate}}</mat-label>
+      <mat-select>
+        <mat-option (click)="changeLangage('en')">English</mat-option>
+        <mat-option (click)="changeLangage('ar')">Arabic</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</header>

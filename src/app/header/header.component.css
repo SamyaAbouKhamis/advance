@@ -96,6 +96,8 @@ body {
   --------------------------------------------------------------*/
   .mr-auto, .mx-auto {
     margin-right: auto !important;
+    flex: auto;
+    
 }
   @media screen and (max-width: 768px) {
     [data-aos-delay] {
