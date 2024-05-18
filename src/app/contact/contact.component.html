@@ -45,16 +45,19 @@
 
       <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-6 " >
-        <google-map style="border:0; width: 100%; height: 384px;"
+          <div id="map" style="height: 100%; width: 100%;"></div>
+
+
+        <!-- <google-map style="border:0; width: 100%; height: 384px;"
         height="400px"
         width="750px"
         [center]="center"
         [zoom]="zoom"
         (mapClick)="moveMap($event)"
-        (mapMousemove)="move($event)" />
-      
+        (mapMousemove)="move($event)" /> -->
+<!--       
       <div>Latitude: {{display?.lat}}</div>
-      <div>Longitude: {{display?.lng}}</div>
+      <div>Longitude: {{display?.lng}}</div> -->
       </div>
        
         <div class="col-lg-6">
