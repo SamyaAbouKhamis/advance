@@ -94,6 +94,9 @@ body {
   /*--------------------------------------------------------------
   # Disable aos animation delay on mobile devices
   --------------------------------------------------------------*/
+  .mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
   @media screen and (max-width: 768px) {
     [data-aos-delay] {
       transition-delay: 0 !important;

@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { MatIconModule } from '@angular/material/icon'
 import { DarkModeService } from '../services/dark-mode.service';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+
+
 @Component({
   selector: 'app-topbar',
   standalone: true,
@@ -13,6 +17,10 @@ import { DarkModeService } from '../services/dark-mode.service';
 })
 export class TopbarComponent {
  
-  faFacebook=faFacebook
+  faFacebook=faFacebook;
+  faInstagram = faInstagram;
+  envelopeIcon: IconDefinition = faEnvelope;
+  phoneIcon: IconDefinition = faPhone;
+
 
 }

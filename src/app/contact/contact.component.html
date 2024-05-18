@@ -10,7 +10,10 @@
       <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-6">
           <div class="info-box mb-4">
-            <i class="bx bx-map"></i>
+            <fa-icon [icon]="mapMarkerIcon" style="  font-size: 32px;
+            color: #128ea6;
+           
+            padding: 8px;"></fa-icon>  
             <h3>Our Address</h3>
             <p>Syria,Damascus,Teliani st.</p>
           </div>
@@ -18,7 +21,10 @@
 
         <div class="col-lg-3 col-md-6">
           <div class="info-box  mb-4">
-            <i class="bx bx-envelope"></i>
+            <fa-icon [icon]="envelopeIcon" style="  font-size: 32px;
+            color: #128ea6;
+           
+            padding: 8px;"></fa-icon> 
             <h3>Email Us</h3>
             <p>infodvance-solution.org</p>
           </div>
@@ -26,7 +32,10 @@
 
         <div class="col-lg-3 col-md-6">
           <div class="info-box  mb-4">
-            <i class="bx bx-phone-call"></i>
+            <fa-icon [icon]="phoneIcon" style="  font-size: 32px;
+            color: #128ea6;
+           
+            padding: 8px;"></fa-icon> 
             <h3>Call Us</h3>
             <p>+963 965 777 235</p>
           </div>
@@ -35,10 +44,19 @@
       </div>
 
       <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
-    
-        <div class="col-lg-6 ">
-          
-        </div>
+        <div class="col-lg-6 " >
+        <google-map style="border:0; width: 100%; height: 384px;"
+        height="400px"
+        width="750px"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)" />
+      
+      <div>Latitude: {{display?.lat}}</div>
+      <div>Longitude: {{display?.lng}}</div>
+      </div>
+       
         <div class="col-lg-6">
           <form action="http://advance-solution.org/forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="form-row">
@@ -47,7 +65,8 @@
                 <div class="validate"></div>
               </div>
               <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email"
+                 data-msg="Please enter a valid email">
                 <div class="validate"></div>
               </div>
             </div>

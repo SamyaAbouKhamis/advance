@@ -11,6 +11,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { BackToTopComponent } from './back-to-top/back-to-top.component';
 
 export const routes: Routes = [
 
@@ -27,4 +28,5 @@ export const routes: Routes = [
     {'path':'portfolio', component:PortfolioComponent},
     {'path':'contact', component:ContactComponent},
     {'path':'footer', component:FooterComponent},
+    {'path':'back-to-top', component:BackToTopComponent},
 ];

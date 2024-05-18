@@ -7,13 +7,16 @@
 <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:info-solution.org">info-solution.org</a>
-        <i class="icofont-phone"></i> +963 965 777 235
+       <a > <fa-icon [icon]="envelopeIcon" ></fa-icon> info-solution.org</a><i class="icofont-facebook"></i>
+        <fa-icon [icon]="phoneIcon" ></fa-icon>  +963 965 777 235<i class="icofont-accessibility"></i>
       </div>
-      <div class="social-links">
+      <div class="social-links" style=" padding-left: 4px;
+      ">
         <!-- <a href="#" class="twitter"><i class="icofont-twitter"></i></a> -->
-        <a href="" class="facebook" target="_blank"><fa-icon [icon]="faFacebook" ></fa-icon><i class="icofont-facebook"></i></a><i class="fa-solid fa-face-awesome"></i>
-         <a href="" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
+        <a ><fa-icon [icon]="faFacebook" ></fa-icon> </a>
+       
+         <a ><fa-icon [icon]="faInstagram"></fa-icon>
+         </a>
         <!-- a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>--> 
         <i class="fa fa-envelope" aria-hidden="true"></i>

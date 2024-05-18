@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -19,6 +19,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TopbarComponent } from './topbar/topbar.component';
 
 import { GoogleMapsModule } from '@angular/google-maps'
+import { BrowserModule } from '@angular/platform-browser';
+import { BackToTopComponent } from './back-to-top/back-to-top.component';
 
 
 
@@ -27,7 +29,7 @@ import { GoogleMapsModule } from '@angular/google-maps'
   standalone: true,
   imports: [RouterOutlet,HeaderComponent,HeroComponent,NgbModule,ServicesComponent,AboutComponent,CountsComponent
   ,ClientsComponent,FeaturedComponent,PortfolioComponent,ContactComponent,FooterComponent,SplashScreenComponent,MatProgressBarModule
-,FormsModule,CommonModule,MatProgressSpinnerModule,TopbarComponent,GoogleMapsModule],
+,FormsModule,CommonModule,MatProgressSpinnerModule,TopbarComponent,GoogleMapsModule,BackToTopComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -38,7 +40,7 @@ export class AppComponent   {
 
 
   ngOnInit() {
-      this.initMap();
+  
     // Simulating data loading delay
     setTimeout(() => {
       this.loading = false;
@@ -46,22 +48,4 @@ export class AppComponent   {
 
    
   }
-  map!: google.maps.Map;
-
- 
-
-
-  initMap(): void {
-    const mapElement = document.getElementById('map');
-    if (mapElement) {
-      this.map = new google.maps.Map(mapElement, {
-        center: { lat: 51.678418, lng: 7.809007 },
-        zoom: 8
-      });
-    } else {
-      console.error('Map element not found');
-    }
-  
-  
-
-}}
+ }

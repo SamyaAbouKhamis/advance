@@ -118,6 +118,7 @@ body {
     line-height: 1;
     color: #fff;
     transition: 0.3s;
+   
   }
   
   #topbar .contact-info a:hover {
@@ -133,7 +134,7 @@ body {
     margin-left: 0;
   }
   
-  #topbar .social-links a {
+  #topbar .social-links {
     color: rgba(255, 255, 255, 0.6);
     padding-left: 15px;
     display: inline-block;

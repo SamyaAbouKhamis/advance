@@ -1,14 +1,9 @@
-
-
-
-<div *ngIf="loading">
+98<div *ngIf="loading">
     <div style="display: flex; flex-direction: column;text-align: center; 
     align-items: center;
     justify-content: center;
     font-size: 24px;
-
-    margin-top: 300px;
-   ">
+    margin-top: 300px;">
         <img src="../assets/advance-logo_1.png" alt="ShopyIq"
             style="width: 150px;align-items: center;text-align: center;justify-items: center;">
         <h4  style="color: #128ea6; font-weight: bold; align-items: center;">
@@ -16,14 +11,14 @@
     </div>
     <div class="spinner-container">
         <mat-spinner  color="accent" style="    max-width: 55px;"></mat-spinner>
-      </div>
-      
+      </div> 
 </div>
-
 <div *ngIf="!loading">
     <!-- <router-outlet></router-outlet> -->
-    <app-topbar></app-topbar>
-    <div id="map"></div>
+
+
+    <app-back-to-top></app-back-to-top>
+    <app-topbar></app-topbar> 
     <app-header></app-header>
     <app-hero></app-hero>
     <app-featured></app-featured>
@@ -34,4 +29,4 @@
     <app-portfolio></app-portfolio>
     <app-contact></app-contact>
     <app-footer></app-footer>
-</div> 
+   
