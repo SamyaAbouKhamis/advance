@@ -1,15 +1,17 @@
 {
-  "Hello":
-  "We offer years of experience in the Information Systems industry, and can assist businesses of all sizes install and manage their network."
-   ,
- "Language":"Language",
-  "Home":"Home",
-  "About":"About",
-  "Services":"Services",
-  "Portfolio":"Portfolio",
-  "Contact":"Contact",
-  "Welcome to":"Welcome to",
-  "advance solution":"advance solution",
-  " Watch Video":" Watch Video"
-
+  "Hello": "We offer years of experience in the Information Systems industry, and can assist businesses of all sizes install and manage their network.",
+  "Language": "Language",
+  "Home": "Home",
+  "About": "About",
+  "Services": "Services",
+  "Portfolio": "Portfolio",
+  "Contact": "Contact",
+  "Welcome to": "Welcome to",
+  "advance solution": "advance solution",
+  " Watch Video": " Watch Video",
+  "Find Out More ": "Find Out More",
+  "About Us": "About Us",
+  "titlee": "We are a company combining business knowledge, strategy, technology and design.",
+  "English": "English",
+  "Arabic": "Arabic"
 }

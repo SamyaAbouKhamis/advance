@@ -1,29 +1,47 @@
-
 <body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
-  <button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+  <button type="button" class="mobile-nav-toggle d-lg-none">
+    <i class="icofont-navigation-menu"></i>
+  </button>
 
-
-
-<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-       <a > <fa-icon [icon]="envelopeIcon" ></fa-icon> info-solution.org</a><i class="icofont-facebook"></i>
-        <fa-icon [icon]="phoneIcon" ></fa-icon>  +963 965 777 235<i class="icofont-accessibility"></i>
+        <a> <fa-icon [icon]="envelopeIcon"></fa-icon> info-solution.org</a
+        ><i class="icofont-facebook"></i>
+        <a>
+          <fa-icon [icon]="phoneIcon"></fa-icon> +963 965 777 235<i
+            class="icofont-accessibility"
+          ></i
+        ></a>
       </div>
-      <div class="social-links" style=" padding-left: 4px;
-      ">
-        <!-- <a href="#" class="twitter"><i class="icofont-twitter"></i></a> -->
-        <a ><fa-icon [icon]="faFacebook" ></fa-icon> </a>
-       
-         <a ><fa-icon [icon]="faInstagram"></fa-icon>
-         </a>
-        <!-- a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>--> 
+      <div class="social-links" style="padding-left: 4px" >
+        <a><fa-icon [icon]="faFacebook"></fa-icon> </a>
+
+        <a><fa-icon [icon]="faInstagram"></fa-icon> </a>
+
         <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a>
+          <button
+            mat-icon-button
+            style="flex-wrap: wrap-reverse"
+            [matMenuTriggerFor]="languageMenu"
+            aria-label="Example icon-button with a changeLanguage"
+          >
+            <span class="material-symbols-outlined">language</span>
+          </button>
+
+          <mat-menu #languageMenu="matMenu">
+            <button mat-menu-item (click)="changeLanguage('en')">
+              {{ "English" | translate }}
+            </button>
+            <button mat-menu-item (click)="changeLanguage('ar')">
+              {{ "Arabic" | translate }}
+            </button>
+          </mat-menu></a
+        >
       </div>
- 
     </div>
-          <!-- <button (click)="changeLangage('ar')">Arabic</button>
+    <!-- <button (click)="changeLangage('ar')">Arabic</button>
 <button (click)="changeLangage('en')">English</button>
 
 <div>
@@ -31,5 +49,4 @@
     <p >{{'Just Text '| translate}}</p>
 </div> -->
   </div>
-  
-  </body>
+</body>

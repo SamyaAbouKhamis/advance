@@ -5,22 +5,45 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+
+import { DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    TranslateModule,
+    MatIconModule,
+    MatExpansionModule,
+    MatMenuModule,
+    MatButtonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+
   constructor(
     private translateService: TranslateService,
-    @Inject(DOCUMENT) private document: Document
-  ) {this.translateService.setDefaultLang('en');
-    this.translateService.use('en')
+    @Inject(DOCUMENT) private document: Document,
+ 
+  ) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
+    
   }
 
-  changeLangage(lang: string) {
+  changeLanguage(lang: string) {
     let htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;

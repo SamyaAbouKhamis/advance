@@ -11,23 +11,57 @@
     <nav class="nav-menu d-none d-lg-block">
       <ul>
         <li class="active">
-          <a href="http://advance-solution.org/index.html">{{
-            "Home" | translate
+          <a href="http://localhost:4200/index.html">
+            {{ "Home" | translate }}</a
+          >
+        </li>
+        <li>
+          <a href="http://localhost:4200/#about">
+            {{ "About" | translate }}</a
+          >
+        </li>
+        <li>
+          <a href="http://localhost:4200/#services">{{
+            "Services" | translate
           }}</a>
         </li>
-        <li><a href="http://advance-solution.org/#about"> {{'About'|translate}}</a></li>
-        <li><a href="http://advance-solution.org/#services">{{'Services'|translate}}</a></li>
-        <li><a href="http://advance-solution.org/#portfolio">{{'Portfolio'|translate}}</a></li>
-        <li><a href="http://advance-solution.org/#contact">{{'Contact'|translate}}</a></li>
+        <li>
+          <a href="http://localhost:4200/#portfolio">{{
+            "Portfolio" | translate
+          }}</a>
+        </li>
+        <li>
+          <a href="http://localhost:4200/#contact">{{
+            "Contact" | translate
+          }}</a>
+        </li>
+        <!-- <li>
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="languageMenu"
+            aria-label="Example icon-button with a changeLanguage"
+          >
+            <span class="material-symbols-outlined">language</span>
+          </button>
+
+          <mat-menu #languageMenu="matMenu">
+            <button mat-menu-item (click)="changeLanguage('en')">
+              {{ "English" | translate }}
+            </button>
+            <button mat-menu-item (click)="changeLanguage('ar')">
+              {{ "Arabic" | translate }}
+            </button>
+          </mat-menu>
+        </li> -->
       </ul>
     </nav>
     <!-- .nav-menu -->
-    <mat-form-field>
-      <mat-label>{{'Language'|translate}}</mat-label>
-      <mat-select>
-        <mat-option (click)="changeLangage('en')">English</mat-option>
-        <mat-option (click)="changeLangage('ar')">Arabic</mat-option>
+    <!-- <mat-form-field>
+      <mat-label>{{ "Language" | translate }}</mat-label>
+    <mat-select>
+        <mat-option (click)="changeLanguage('en')">English</mat-option>
+        <mat-option (click)="changeLanguage('ar')">Arabic</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
   </div>
 </header>
