@@ -105,9 +105,7 @@ export class HeaderComponent {
   activeLink: string = 'home'; // Default active link
 
   setActive(link: string): void {
-    setTimeout(() => {
-      this.activeLink = link;
-    }, 500); // Adjust the delay as needed (500ms in this example)
+   this.activeLink = link;
   }
 }
 

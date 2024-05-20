@@ -174,7 +174,6 @@ h6 {
   color: #fff;
   margin-right: 15px;
     color: rgba(255, 255, 255, 0.6);
-<<<<<<< HEAD
     padding-left: 15px;
     display: inline-block;
     line-height: 1px;
@@ -197,28 +196,3 @@ h6 {
 
 
 
-=======
-  padding-left: 15px;
-  display: inline-block;
-  line-height: 1px;
-  transition: 0.3s;
-}
-
-#topbar .social-links button.mat-icon-button {
-  color: #fff;
-  padding: 0;
-}
-
-#topbar .social-links .material-symbols-outlined {
-  font-size: 20px;
-}
-
-.mat-menu-item {
-  display: flex;
-  align-items: center;
-}
-
-.mat-menu-item mat-icon {
-  margin-right: 8px;
-}
->>>>>>> b178c4d40b1e300c8424eab53868e2dc6549333a
