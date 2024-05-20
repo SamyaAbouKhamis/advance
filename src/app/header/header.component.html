@@ -6,60 +6,56 @@
       </a>
     </h1>
 
+<nav class="nav-menu d-none d-lg-block">
+  <ul>
+    <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/index.html"
+        (click)="delayedNavigation($event, 'home', 'http://localhost:4200/index.html')"
+        [ngClass]="{ active: activeLink === 'home' }"
+      >
+        {{ "Home" | translate }}
+      </a>
+    </li>
+    <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/#about"
+        (click)="delayedNavigation($event, 'about', 'http://localhost:4200/#about')"
+        [ngClass]="{ active: activeLink === 'about' }"
+      >
+        {{ "About" | translate }}
+      </a>
+    </li>
+    <li [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/#services"
+        (click)="delayedNavigation($event, 'services', 'http://localhost:4200/#services')"
+        [ngClass]="{ active: activeLink === 'services' }"
+      >
+        {{ "Services" | translate }}
+      </a>
+    </li>
+    <li [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/#portfolio"
+        (click)="delayedNavigation($event, 'portfolio', 'http://localhost:4200/#portfolio')"
+        [ngClass]="{ active: activeLink === 'portfolio' }"
+      >
+        {{ "Portfolio" | translate }}
+      </a>
+    </li>
+    <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/#contact"
+        (click)="delayedNavigation($event, 'contact', 'http://localhost:4200/#contact')"
+        [ngClass]="{ active: activeLink === 'contact' }"
+      >
+        {{ "Contact" | translate }}
+      </a>
+    </li>
+  </ul>
+</nav>
 
-    <nav class="nav-menu d-none d-lg-block">
-      <ul>
-        <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
-          <a
-            href="http://localhost:4200/index.html"
-            (click)="setActive('home')"
-            [ngClass]="{ active: activeLink === 'home' }"
-          >
-            {{ "Home" | translate }}
-          </a>
-        </li>
-        <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
-          <a
-            href="http://localhost:4200/#about"
-            (click)="setActive('about')"
-            [ngClass]="{ active: activeLink === 'about' }"
-          >
-            {{ "About" | translate }}
-          </a>
-        </li>
-        <li
-          [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'"
-        >
-          <a
-            href="http://localhost:4200/#services"
-            (click)="setActive('services')"
-            [ngClass]="{ active: activeLink === 'services' }"
-          >
-            {{ "Services" | translate }}
-          </a>
-        </li>
-        <li
-          [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'"
-        >
-          <a
-            href="http://localhost:4200/#portfolio"
-            (click)="setActive('portfolio')"
-            [ngClass]="{ active: activeLink === 'portfolio' }"
-          >
-            {{ "Portfolio" | translate }}
-          </a>
-        </li>
-        <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'" >
-          <a 
-            href="http://localhost:4200/#contact" 
-            (click)="setActive('contact')" 
-            [ngClass]="{ active: activeLink === 'contact' }"
-          >
-            {{ "Contact" | translate }}
-          </a>
-        </li>
-      </ul>
-    </nav>
 
     <!-- <li>
           <button

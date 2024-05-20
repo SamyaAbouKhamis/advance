@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import {
   animate,
+  sequence,
   state,
   style,
   transition,
@@ -27,8 +28,14 @@ import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule,FontAwesomeModule,
- 
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    TranslateModule,
+    FontAwesomeModule,
+
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,
@@ -54,14 +61,17 @@ import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
         })
       ),
       transition('inactive => active', [
-        animate('300ms ease-in', style({ delay: '100ms' })), // 100ms delay
+        sequence([
+          animate('0ms', style({ opacity: 1 })), // Initial state with no delay
+          animate('100ms', style({ opacity: 1 })), // Delay of 100ms
+          animate('300ms ease-in'),
+        ]),
       ]),
       transition('active => inactive', [animate('300ms ease-out')]),
     ]),
   ],
 })
 export class HeaderComponent {
-
   globeIcon = faGlobe;
   constructor(
     private translateService: TranslateService,
@@ -105,7 +115,14 @@ export class HeaderComponent {
   activeLink: string = 'home'; // Default active link
 
   setActive(link: string): void {
-   this.activeLink = link;
+    this.activeLink = link;
+  }
+  delayedNavigation(event: Event, link: string, url: string): void {
+    event.preventDefault();
+    this.setActive(link);
+    setTimeout(() => {
+      window.location.href = url;
+    }, 500); // Adjust the delay time as needed
   }
 }
 
