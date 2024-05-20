@@ -19,12 +19,15 @@ export class HeaderComponent {
   globeIcon = faGlobe;
   constructor(
     private translateService: TranslateService,
-    @Inject(DOCUMENT) private document: Document
-  ) {this.translateService.setDefaultLang('en');
-    this.translateService.use('en')
+    @Inject(DOCUMENT) private document: Document,
+ 
+  ) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
+    
   }
 
-  changeLangage(lang: string) {
+  changeLanguage(lang: string) {
     let htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;
