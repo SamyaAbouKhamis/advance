@@ -4,7 +4,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { DOCUMENT } from '@angular/common';
 import { faGlobe, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DOCUMENT, CommonModule } from '@angular/common';
@@ -28,13 +27,8 @@ import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule,FontAwesomeModule],
-  imports: [
-    FormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    TranslateModule,
+  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule,FontAwesomeModule,
+ 
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,
