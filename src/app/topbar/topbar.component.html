@@ -10,16 +10,23 @@
        <a > <fa-icon [icon]="envelopeIcon" ></fa-icon> info-solution.org</a><i class="icofont-facebook"></i>
         <fa-icon [icon]="phoneIcon" ></fa-icon>  +963 965 777 235<i class="icofont-accessibility"></i>
       </div>
-      <div class="social-links" style=" padding-left: 4px;
-      ">
-        <!-- <a href="#" class="twitter"><i class="icofont-twitter"></i></a> -->
-        <a ><fa-icon [icon]="faFacebook" ></fa-icon> </a>
+      <div class="social-links" 
+      >
+      
+        <a ><fa-icon style="font-size: 600;" [icon]="faFacebook" ></fa-icon> </a>
        
-         <a ><fa-icon [icon]="faInstagram"></fa-icon>
+         <a  ><fa-icon [icon]="faInstagram"></fa-icon>
          </a>
-        <!-- a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>--> 
-        <i class="fa fa-envelope" aria-hidden="true"></i>
+         <button
+         mat-icon-button style="flex-wrap: wrap-reverse;"
+         [matMenuTriggerFor]="languageMenu"
+         aria-label="Example icon-button with a changeLanguage"
+       >
+         <span class="material-symbols-outlined">language</span>
+       </button>
+
+       <mat-menu #languageMenu="matMenu"></mat-menu>
+
       </div>
  
     </div>
@@ -31,5 +38,5 @@
     <p >{{'Just Text '| translate}}</p>
 </div> -->
   </div>
-  
+ 
   </body>

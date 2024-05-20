@@ -1,3 +1,8 @@
 body {
   background-color: yellow;
+}body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
 }
+
+/* Add more dark mode styles as needed */

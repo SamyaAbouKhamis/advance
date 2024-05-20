@@ -141,8 +141,20 @@ body {
     line-height: 1px;
     transition: 0.3s;
   }
+  #topbar .social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
   
   #topbar .social-links a:hover {
     color: #fff;
   }
-  
+  .mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+
+

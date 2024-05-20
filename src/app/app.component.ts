@@ -21,7 +21,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { BrowserModule } from '@angular/platform-browser';
 import { BackToTopComponent } from './back-to-top/back-to-top.component';
-import { TranslateService } from '@ngx-translate/core';
+import { ThemeService } from './theme.service';
 
 
 
@@ -58,10 +58,23 @@ export class AppComponent {
   loading: boolean = true;
 
   ngOnInit() {
+    this.themeService.applyTheme();
     // Simulating data loading delay
     setTimeout(() => {
       this.loading = false;
     }, 2000); // Replace 2000 with your actual data loading time
   }
+
+
+ 
+  constructor(private themeService: ThemeService) {}
+
+
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  
 
 }

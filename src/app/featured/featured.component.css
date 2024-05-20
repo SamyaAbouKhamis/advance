@@ -143,14 +143,10 @@ section {
   
   .featured-services .icon {
     margin-bottom: 15px;
+   
   }
   
-  .featured-services .icon i {
-    font-size: 48px;
-    line-height: 1;
-    color: #128ea6;
-    transition: all 0.3s ease-in-out;
-  }
+ 
   
   .featured-services .title {
     font-weight: 700;
@@ -172,6 +168,6 @@ section {
     color: #fff;
   }
   
-  .featured-services .icon-box:hover .icon i {
+  .featured-services .icon-box:hover .icon .fa-icon {
     color: #fff;
   }

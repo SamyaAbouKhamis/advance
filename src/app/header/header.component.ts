@@ -5,14 +5,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
+import { faGlobe, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule],
+  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,TranslateModule,FontAwesomeModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+
+  globeIcon = faGlobe;
   constructor(
     private translateService: TranslateService,
     @Inject(DOCUMENT) private document: Document

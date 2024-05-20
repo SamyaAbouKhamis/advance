@@ -173,4 +173,13 @@
       padding: 2px 0;
     }
   }
+  :host-context(.dark-theme) {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  :host-context(.light-theme) {
+    background-color: #fff;
+    color: #000;
+  }
   
