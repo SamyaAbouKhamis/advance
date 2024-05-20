@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -24,13 +25,32 @@ import { DOCUMENT } from '@angular/common';
   ],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('300ms ease-out', style({ opacity: 0 }))]),
+    ]),
+    trigger('slideInOut', [
+      state('in', style({ transform: 'translateX(0)' })),
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('300ms ease-in', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':leave', [
+        animate('300ms ease-out', style({ transform: 'translateX(-100%)' })),
+      ]),
+    ]),
+  ],
 })
 export class TopbarComponent {
   faFacebook = faFacebook;
   faInstagram = faInstagram;
   envelopeIcon: IconDefinition = faEnvelope;
   phoneIcon: IconDefinition = faPhone;
-
+  @Input() showAnimation = true;
   constructor(
     private translateService: TranslateService,
     @Inject(DOCUMENT) private document: Document

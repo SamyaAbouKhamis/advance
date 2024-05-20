@@ -6,11 +6,17 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { ModuleWithProviders, NgModule, Provider } from '@angular/core';
-import { Routes, RouterModule, RouterOutlet } from '@angular/router';
-import { TranslateCompiler, TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { Routes, RouterModule } from '@angular/router';
+import {
+  TranslateCompiler,
+  TranslateLoader,
+  TranslateModule,
+  TranslatePipe,
+
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
-import { BrowserModule } from '@angular/platform-browser';
+
 
 
 const HttpLoaderFactory = (http: HttpClient) =>
@@ -31,7 +37,7 @@ const translateCompiler:Provider={
 const routes: Routes = [];
 
 @NgModule({
-  imports: [HttpClientModule, TranslateModule],
+  imports: [HttpClientModule, TranslateModule,CommonModule],
 
   exports: [RouterModule],
 

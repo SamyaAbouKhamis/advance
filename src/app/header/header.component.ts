@@ -1,18 +1,26 @@
-import { Component, Inject } from '@angular/core';
+import { Component, ElementRef, Inject, Input, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
 
 @Component({
   selector: 'app-header',
@@ -27,20 +35,40 @@ import { MatButtonModule } from '@angular/material/button';
     MatExpansionModule,
     MatMenuModule,
     MatButtonModule,
+    CommonModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
+  animations: [
+    trigger('linkAnimation', [
+      state(
+        'inactive',
+        style({
+          transform: 'scale(1)',
+          opacity: 1,
+        })
+      ),
+      state(
+        'active',
+        style({
+          transform: 'scale(1.1)',
+          opacity: 0.5,
+        })
+      ),
+      transition('inactive => active', [
+        animate('300ms ease-in', style({ delay: '100ms' })), // 100ms delay
+      ]),
+      transition('active => inactive', [animate('300ms ease-out')]),
+    ]),
+  ],
 })
 export class HeaderComponent {
-
   constructor(
     private translateService: TranslateService,
-    @Inject(DOCUMENT) private document: Document,
- 
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.translateService.setDefaultLang('en');
     this.translateService.use('en');
-    
   }
 
   changeLanguage(lang: string) {
@@ -74,4 +102,13 @@ export class HeaderComponent {
       headTag.appendChild(newLink);
     }
   }
+  activeLink: string = 'home'; // Default active link
+
+  setActive(link: string): void {
+    setTimeout(() => {
+      this.activeLink = link;
+    }, 500); // Adjust the delay as needed (500ms in this example)
+  }
 }
+
+

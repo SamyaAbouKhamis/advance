@@ -10,32 +10,59 @@
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active">
-          <a href="http://localhost:4200/index.html">
-            {{ "Home" | translate }}</a
+        <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
+          <a
+            href="http://localhost:4200/index.html"
+            (click)="setActive('home')"
+            [ngClass]="{ active: activeLink === 'home' }"
           >
+            {{ "Home" | translate }}
+          </a>
         </li>
-        <li>
-          <a href="http://localhost:4200/#about">
-            {{ "About" | translate }}</a
+        <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
+          <a
+            href="http://localhost:4200/#about"
+            (click)="setActive('about')"
+            [ngClass]="{ active: activeLink === 'about' }"
           >
+            {{ "About" | translate }}
+          </a>
         </li>
-        <li>
-          <a href="http://localhost:4200/#services">{{
-            "Services" | translate
-          }}</a>
+        <li
+          [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'"
+        >
+          <a
+            href="http://localhost:4200/#services"
+            (click)="setActive('services')"
+            [ngClass]="{ active: activeLink === 'services' }"
+          >
+            {{ "Services" | translate }}
+          </a>
         </li>
-        <li>
-          <a href="http://localhost:4200/#portfolio">{{
-            "Portfolio" | translate
-          }}</a>
+        <li
+          [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'"
+        >
+          <a
+            href="http://localhost:4200/#portfolio"
+            (click)="setActive('portfolio')"
+            [ngClass]="{ active: activeLink === 'portfolio' }"
+          >
+            {{ "Portfolio" | translate }}
+          </a>
         </li>
-        <li>
-          <a href="http://localhost:4200/#contact">{{
-            "Contact" | translate
-          }}</a>
+        <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'" >
+          <a 
+            href="http://localhost:4200/#contact" 
+            (click)="setActive('contact')" 
+            [ngClass]="{ active: activeLink === 'contact' }"
+          >
+            {{ "Contact" | translate }}
+          </a>
         </li>
-        <!-- <li>
+      </ul>
+    </nav>
+
+    <!-- <li>
           <button
             mat-icon-button
             [matMenuTriggerFor]="languageMenu"
@@ -53,8 +80,6 @@
             </button>
           </mat-menu>
         </li> -->
-      </ul>
-    </nav>
     <!-- .nav-menu -->
     <!-- <mat-form-field>
       <mat-label>{{ "Language" | translate }}</mat-label>

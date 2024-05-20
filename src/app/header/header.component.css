@@ -163,11 +163,13 @@ body {
     position: relative;
     color: #222222;
     transition: 0.3s;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     padding: 0 3px;
     font-family: "Open Sans", sans-serif;
+      text-decoration: none;
   }
+  
   
   .nav-menu > ul > li > a:before {
     content: "";
@@ -187,10 +189,19 @@ body {
     width: 100%;
   }
   
-  .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  /* .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
     color: #128ea6;
   }
-  
+  */
+.nav-menu a {
+  text-decoration: none;
+  color: inherit; /* Default color */
+}
+
+.nav-menu a.active {
+  color: #128ea6; /* Change this to the desired active color */
+}
+
   .nav-menu .drop-down ul {
     display: block;
     position: absolute;
