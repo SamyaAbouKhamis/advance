@@ -14,6 +14,7 @@
           ></i
         ></a>
       </div>
+    <div class="social-links" style="padding-left: 4px"  [@slideInOut]>
       <div class="social-links" style="padding-left: 4px"  [@slideInOut]>
         <a><fa-icon [icon]="faFacebook"></fa-icon> </a>
 
@@ -27,10 +28,12 @@
             [matMenuTriggerFor]="languageMenu"
             aria-label="Example icon-button with a changeLanguage"
           
+          
           >
             <span class="material-symbols-outlined">language</span>
           </button>
 
+          <mat-menu #languageMenu="matMenu" >
           <mat-menu #languageMenu="matMenu" >
             <button mat-menu-item (click)="changeLanguage('en')">
               {{ "English" | translate }}
@@ -39,7 +42,9 @@
               {{ "Arabic" | translate }}
             </button>
           </mat-menu> </a
+          </mat-menu> </a
         >
+      
       
       </div>
     </div>
@@ -51,4 +56,5 @@
     <p >{{'Just Text '| translate}}</p>
 </div> -->
   </div>
-</body>
+ 
+  </body>

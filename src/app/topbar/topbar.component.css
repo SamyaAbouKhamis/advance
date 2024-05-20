@@ -174,6 +174,30 @@ h6 {
   color: #fff;
   margin-right: 15px;
     color: rgba(255, 255, 255, 0.6);
+<<<<<<< HEAD
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+  #topbar .social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 15px;
+    display: inline-block;
+    line-height: 1px;
+    transition: 0.3s;
+  }
+  
+  #topbar .social-links a:hover {
+    color: #fff;
+  }
+  .mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+
+
+=======
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
@@ -197,3 +221,4 @@ h6 {
 .mat-menu-item mat-icon {
   margin-right: 8px;
 }
+>>>>>>> b178c4d40b1e300c8424eab53868e2dc6549333a

@@ -5,8 +5,7 @@
         <img src="../../assets/advance-logo_1.png" />
       </a>
     </h1>
-    <!--Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
+
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
@@ -82,11 +81,13 @@
         </li> -->
     <!-- .nav-menu -->
     <!-- <mat-form-field>
-      <mat-label>{{ "Language" | translate }}</mat-label>
-    <mat-select>
-        <mat-option (click)="changeLanguage('en')">English</mat-option>
-        <mat-option (click)="changeLanguage('ar')">Arabic</mat-option>
+      
+      <mat-label>{{''|translate}} <fa-icon [icon]="globeIcon"></fa-icon></mat-label>
+      <mat-select>
+       
+        <mat-option (click)="changeLangage('en')">English</mat-option>
+        <mat-option (click)="changeLangage('ar')">Arabic</mat-option>
       </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>  -->
   </div>
 </header>

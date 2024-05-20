@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -8,8 +8,11 @@ import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
   imports: [FontAwesomeModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
+
 })
 export class FooterComponent {
   faFacebook=faFacebook;
   faInstagram=faInstagram;
+
+  
 }

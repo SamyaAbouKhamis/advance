@@ -30,6 +30,8 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { ThemeService } from './theme.service';
+
 
 
 @Component({
@@ -85,9 +87,23 @@ export class AppComponent {
   loading: boolean = true;
 
   ngOnInit() {
+    this.themeService.applyTheme();
     // Simulating data loading delay
     setTimeout(() => {
       this.loading = false;
     }, 2000); // Replace 2000 with your actual data loading time
   }
+
+
+ 
+  constructor(private themeService: ThemeService) {}
+
+
+
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+  }
+
+  
+
 }

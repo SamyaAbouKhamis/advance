@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { MatIconModule } from '@angular/material/icon'
-import { DarkModeService } from '../services/dark-mode.service';
+
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
@@ -16,13 +18,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [
-    FontAwesomeModule,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    TranslateModule,
-  ],
+  imports: [FontAwesomeModule, MatIconModule,MatMenuModule,MatButtonModule,MatProgressSpinnerModule,TranslateModule],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css',
   animations: [
@@ -90,4 +86,5 @@ export class TopbarComponent {
       headTag.appendChild(newLink);
     }
   }
+
 }
