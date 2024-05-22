@@ -74,12 +74,12 @@
   </div>
 </header> -->
 
-<header id="header" class="fixed-top">
-  <div class="navbar-nav">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container d-flex align-items-center" style="display: flex">
+<header id="header" class=" fixed-top" >
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary " >
+      <div class="container d-flex align-items-center " style="display: flex">
         <a>
-          <img src="../../assets/logo00.png" style="max-height: 40px" />
+          <img src="../../assets/logo00.png" style=" width: 100px;" />
         </a>
         <button
           class="navbar-toggler"
@@ -92,14 +92,14 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+        <div class="collapse navbar-collapse  " id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
             <li
-              [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'"
+             [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'"
             >
               <a
                 href="http://localhost:4200/index.html"
-                (click)="setActiveLink('http://localhost:4200/index.html')"
+                (click)="setActiveLink('index.html')"
                 [ngClass]="{ active: activeLink === 'home' }"
               >
                 {{ "Home" | translate }}
@@ -109,13 +109,13 @@
           <a
             [routerLink]="['/', currentLang]"
             fragment="about"
-            (click)="setActiveLink('http://localhost:4200/about')"
+            (click)="setActiveLink('about')"
             [ngClass]="{ active: activeLink === 'about' }"
           >
             {{ "About" | translate }}
           </a>
         </li>
-        <li>
+        <li [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'">
           <a
             [routerLink]="['/', currentLang]"
             fragment="services"
@@ -125,7 +125,7 @@
             {{ "Services" | translate }}
           </a>
         </li>
-        <li>
+        <li [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'">
           <a
             [routerLink]="['/', currentLang]"
             fragment="portfolio"
@@ -136,7 +136,7 @@
           </a>
         </li>
 
-        <li>
+        <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
           <a
             [routerLink]="['/', currentLang]"
             fragment="contact"
@@ -146,9 +146,6 @@
             {{ "Contact" | translate }}
           </a>
         </li>
-          </div>
-        </div>
-      </div>
            <button
             mat-icon-button
             style="flex-wrap: wrap-reverse"
@@ -156,7 +153,7 @@
             aria-label="Example icon-button with a changeLanguage"
           
           >
-            <span class="material-symbols-outlined">language</span>
+            <span class="material-symbols-outlined">{{'language '| translate}}</span>
           </button>
 
           <mat-menu #languageMenu="matMenu" >
@@ -167,9 +164,14 @@
               {{ "Arabic" | translate }}
             </button>
           </mat-menu> 
+          </div>
+          
+        </div>
+      </div>
+        
         
     </nav>
-  </div>
+ 
 </header>
 
 <!-- <li>

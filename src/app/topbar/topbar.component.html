@@ -1,27 +1,23 @@
-<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
-  <button type="button" class="mobile-nav-toggle d-lg-none">
-    <i class="icofont-navigation-menu"></i>
-  </button>
 
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+
+  <div id="topbar"class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <a> <fa-icon [icon]="envelopeIcon"></fa-icon> info-solution.org</a
-        ><i class="icofont-facebook"></i>
-        <a>
-          <fa-icon [icon]="phoneIcon"></fa-icon> +963 965 777 235<i
-            class="icofont-accessibility"
-          ></i
-        ></a>
-      </div>
-    <div class="social-links" style="padding-left: 4px"  [@slideInOut]>
-        <a><fa-icon [icon]="faFacebook"></fa-icon> </a>
+       <div class="contact-info mr-auto">
+       <a  class="btn email" >
+    <i class="fas fa-envelope"></i> info-solution.org</a>
+        <a class="btn phone" (click)="openLink('tel:+963 965 777 235')">
+    <i class="fas fa-phone"></i> +963 965 777 235
+      </a>
+       </div>
 
-        <a><fa-icon [icon]="faInstagram"></fa-icon> </a>
-
-        <i class="fa fa-envelope" aria-hidden="true"></i>
-        <a>
-          <button
+    <div class="social-links" style="padding-left: 4px"  >
+        <button   mat-icon-button class="material-symbols-outlined" (click)="openLink('https://www.facebook.com/Advance.SLN?mibextid=ZbWKwL')">
+    <i class="fab fa-facebook-f"></i>
+  </button>
+  <button   mat-icon-button class="material-symbols-outlined" (click)="openLink('https://www.instagram.com/advance.solution?igsh=b28wcnI1Z2xjd2l2')">
+    <i class="fab fa-instagram"></i> 
+  </button>
+     <button
             mat-icon-button
             style="flex-wrap: wrap-reverse"
             [matMenuTriggerFor]="languageMenu"
@@ -30,6 +26,9 @@
           >
             <span class="material-symbols-outlined">language</span>
           </button>
+        <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+        <a>
+       
 
           <mat-menu #languageMenu="matMenu" >
             <button mat-menu-item (click)="changeLanguage('en')">
@@ -52,4 +51,3 @@
 </div> -->
   </div>
  
-  </body>

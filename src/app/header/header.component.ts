@@ -15,6 +15,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import {
   animate,
+  group,
   sequence,
   state,
   style,
@@ -36,7 +37,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
     MatInputModule,
     TranslateModule,
     FontAwesomeModule,
-    MatToolbarModule, 
+    MatToolbarModule,
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,
@@ -53,6 +54,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
         style({
           transform: 'scale(1)',
           opacity: 1,
+          color: 'black',
         })
       ),
       state(
@@ -60,16 +62,32 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
         style({
           transform: 'scale(1.1)',
           opacity: 0.5,
+          color: '#128ea6',
         })
       ),
       transition('inactive => active', [
-        sequence([
-          animate('0ms', style({ opacity: 1 })), // Initial state with no delay
-          animate('100ms', style({ opacity: 1 })), // Delay of 100ms
-          animate('300ms ease-in'),
+        group([
+          animate('100ms', style({ opacity: 1 })), // initial delay
+          animate(
+            '300ms 100ms ease-in',
+            style({
+              transform: 'scale(1.1)',
+              opacity: 0.5,
+              color: '#128ea6',
+            })
+          ),
         ]),
       ]),
-      transition('active => inactive', [animate('300ms ease-out')]),
+      transition('active => inactive', [
+        animate(
+          '300ms ease-out',
+          style({
+            transform: 'scale(1)',
+            opacity: 1,
+            color: 'black',
+          })
+        ),
+      ]),
     ]),
   ],
 })
@@ -87,10 +105,10 @@ export class HeaderComponent {
             if (element) {
               element.scrollIntoView({ behavior: 'smooth' });
             }
-          }, 100); 
+          }, 100);
         }
         const urlSegments = this.router.url.split('/');
-        this.currentLang = urlSegments[1] || 'en'; 
+        this.currentLang = urlSegments[1] || 'en';
       }
     });
   }

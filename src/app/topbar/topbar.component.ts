@@ -52,8 +52,6 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class TopbarComponent {
-  faFacebook = faFacebook;
-  faInstagram = faInstagram;
   envelopeIcon: IconDefinition = faEnvelope;
   phoneIcon: IconDefinition = faPhone;
   @Input() showAnimation = true;
@@ -115,5 +113,8 @@ export class TopbarComponent {
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }
+  }
+  openLink(url: string): void {
+    window.open(url, '_blank');
   }
 }

@@ -3,11 +3,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { faWebAwesome } from '@fortawesome/free-brands-svg-icons';
 import { faVideo, faWifi, faSignal,faPhone } from '@fortawesome/free-solid-svg-icons';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule,TranslateModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
