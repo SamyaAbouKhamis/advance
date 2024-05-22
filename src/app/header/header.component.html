@@ -1,89 +1,47 @@
 <header id="header" class="fixed-top">
-  <div class="container d-flex align-items-center" style="display: flex">
-    <h1 class="logo mr-auto">
-      <a href="http://advance-solution.org/index.html">
-        <img src="../../assets/advance-logo_1.png" />
-      </a>
-    </h1>
-
-<nav class="nav-menu d-none d-lg-block">
-  <ul>
-    <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/index.html"
-        (click)="delayedNavigation($event, 'home', 'http://localhost:4200/index.html')"
-        [ngClass]="{ active: activeLink === 'home' }"
-      >
-        {{ "Home" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#about"
-        (click)="delayedNavigation($event, 'about', 'http://localhost:4200/#about')"
-        [ngClass]="{ active: activeLink === 'about' }"
-      >
-        {{ "About" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#services"
-        (click)="delayedNavigation($event, 'services', 'http://localhost:4200/#services')"
-        [ngClass]="{ active: activeLink === 'services' }"
-      >
-        {{ "Services" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#portfolio"
-        (click)="delayedNavigation($event, 'portfolio', 'http://localhost:4200/#portfolio')"
-        [ngClass]="{ active: activeLink === 'portfolio' }"
-      >
-        {{ "Portfolio" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#contact"
-        (click)="delayedNavigation($event, 'contact', 'http://localhost:4200/#contact')"
-        [ngClass]="{ active: activeLink === 'contact' }"
-      >
-        {{ "Contact" | translate }}
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
-    <!-- <li>
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="languageMenu"
-            aria-label="Example icon-button with a changeLanguage"
-          >
-            <span class="material-symbols-outlined">language</span>
-          </button>
-
-          <mat-menu #languageMenu="matMenu">
-            <button mat-menu-item (click)="changeLanguage('en')">
-              {{ "English" | translate }}
-            </button>
-            <button mat-menu-item (click)="changeLanguage('ar')">
-              {{ "Arabic" | translate }}
-            </button>
-          </mat-menu>
-        </li> -->
-    <!-- .nav-menu -->
-    <!-- <mat-form-field>
-      
-      <mat-label>{{''|translate}} <fa-icon [icon]="globeIcon"></fa-icon></mat-label>
-      <mat-select>
-       
-        <mat-option (click)="changeLangage('en')">English</mat-option>
-        <mat-option (click)="changeLangage('ar')">Arabic</mat-option>
-      </mat-select>
-    </mat-form-field>  -->
+  <div class="navbar-nav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container d-flex align-items-center"  style="display: flex;">
+        <a  >
+          <img src="../../assets/logo00.png" style="max-height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
+              <a href="http://localhost:4200/index.html"
+                (click)="delayedNavigation($event, 'home', 'http://localhost:4200/index.html')"
+                [ngClass]="{ active: activeLink === 'home' }">
+                {{ "Home" | translate }}
+              </a>
+            </li>
+            <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
+              <a href="http://localhost:4200/#about"
+                (click)="delayedNavigation($event, 'about', 'http://localhost:4200/#about')"
+                [ngClass]="{ active: activeLink === 'about' }">
+                {{ "About" | translate }}
+              </a>
+            </li>
+            <li [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'">
+              <a href="http://localhost:4200/#services"
+                (click)="delayedNavigation($event, 'services', 'http://localhost:4200/#services')"
+                [ngClass]="{ active: activeLink === 'services' }">
+                {{ "Services" | translate }}
+              </a>
+            </li>
+            <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
+              <a href="http://localhost:4200/#portfolio"
+                (click)="delayedNavigation($event, 'portfolio', 'http://localhost:4200/#portfolio')"
+                [ngClass]="{ active: activeLink === 'portfolio' }">
+                {{ "Portfolio" | translate }}
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
 </header>
