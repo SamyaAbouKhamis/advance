@@ -1,4 +1,4 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -13,12 +13,21 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
+;
 
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [FontAwesomeModule, MatIconModule,MatMenuModule,MatButtonModule,MatProgressSpinnerModule,TranslateModule],
+  imports: [
+    FontAwesomeModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    TranslateModule,RouterLink
+  ],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css',
   animations: [
@@ -41,14 +50,21 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ]),
   ],
 })
-export class TopbarComponent {
+export class TopbarComponent  {
   faFacebook = faFacebook;
   faInstagram = faInstagram;
   envelopeIcon: IconDefinition = faEnvelope;
   phoneIcon: IconDefinition = faPhone;
   @Input() showAnimation = true;
+  
+
+  
   constructor(
+    
     private translateService: TranslateService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+
     @Inject(DOCUMENT) private document: Document
   ) {
     this.translateService.setDefaultLang('en');
@@ -56,35 +72,38 @@ export class TopbarComponent {
   }
 
   changeLanguage(lang: string) {
-    let htmlTag = this.document.getElementsByTagName(
+    const currentUrl = this.router.url.split('/').slice(2).join('/');
+    const htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;
     htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
     this.translateService.setDefaultLang(lang);
     this.translateService.use(lang);
+    this.router.navigate([`/${lang}/${currentUrl}`]);
+
     this.changeCssFile(lang);
   }
 
   changeCssFile(lang: string) {
-    let headTag = this.document.getElementsByTagName(
+    const headTag = this.document.getElementsByTagName(
       'head'
     )[0] as HTMLHeadElement;
-    let existingLink = this.document.getElementById(
+    const existingLink = this.document.getElementById(
       'langCss'
     ) as HTMLLinkElement;
 
-    let bundleName = lang === 'ar' ? 'arabicStyle.css' : 'englishStyle.css';
+    const bundleName = lang === 'ar' ? 'styles-ar.css' : 'styles-en.css';
 
     if (existingLink) {
       existingLink.href = bundleName;
     } else {
-      let newLink = this.document.createElement('link');
+      const newLink = this.document.createElement('link');
       // newLink.rel = 'stylesheet';
       // newLink.type = 'text/css';
-      // newLink.id = 'langCss';
+      newLink.id = 'langCss';
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }
   }
-
+  
 }

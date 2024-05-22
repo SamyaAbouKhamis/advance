@@ -16,11 +16,15 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
+import { AppComponent } from '../app.component';
+import { TopbarComponent } from '../topbar/topbar.component';
 
 
 
 const HttpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http, './assets/i18n/', '.json');
+
+
 
 const httpCompilerFactory=()=> new TranslateMessageFormatCompiler();
 
@@ -34,18 +38,21 @@ const translateCompiler:Provider={
   provide:TranslateCompiler,
   useFactory:httpCompilerFactory,
 }
-const routes: Routes = [];
+
 
 @NgModule({
-  imports: [HttpClientModule, TranslateModule,CommonModule],
+  imports: [
+    HttpClientModule,
+    TranslateModule,
+    CommonModule,
+    RouterModule.forRoot([]),
+  ],
 
   exports: [RouterModule],
 
   providers: [],
 })
 export class AppTranslateModule {
-
-
   static forRoot(): ModuleWithProviders<AppTranslateModule> {
     return TranslateModule.forRoot({
       loader: translateLoader,
@@ -62,7 +69,8 @@ export class AppTranslateModule {
     return TranslateModule.forRoot({
       loader: translateLoader,
       compiler: translateCompiler,
-      isolate:false,
+      isolate: false,
     });
   }
+  
 }

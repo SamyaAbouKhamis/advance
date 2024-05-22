@@ -24,6 +24,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -41,6 +42,7 @@ import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
     MatMenuModule,
     MatButtonModule,
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -73,8 +75,31 @@ import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
 })
 export class HeaderComponent {
   globeIcon = faGlobe;
+
+  currentLang: string = 'en';
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if (fragment) {
+          setTimeout(() => {
+            const element = document.getElementById(fragment);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100); 
+        }
+        const urlSegments = this.router.url.split('/');
+        this.currentLang = urlSegments[1] || 'en'; 
+      }
+    });
+  }
+
   constructor(
     private translateService: TranslateService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+
     @Inject(DOCUMENT) private document: Document
   ) {
     this.translateService.setDefaultLang('en');
@@ -82,48 +107,47 @@ export class HeaderComponent {
   }
 
   changeLanguage(lang: string) {
-    let htmlTag = this.document.getElementsByTagName(
+    const htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;
     htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
     this.translateService.setDefaultLang(lang);
     this.translateService.use(lang);
+    this.currentLang = lang;
+    this.router.navigate(['/', this.currentLang]);
     this.changeCssFile(lang);
   }
-
   changeCssFile(lang: string) {
-    let headTag = this.document.getElementsByTagName(
+    const headTag = this.document.getElementsByTagName(
       'head'
     )[0] as HTMLHeadElement;
-    let existingLink = this.document.getElementById(
+    const existingLink = this.document.getElementById(
       'langCss'
     ) as HTMLLinkElement;
 
-    let bundleName = lang === 'ar' ? 'arabicStyle.css' : 'englishStyle.css';
+    const bundleName = lang === 'ar' ? 'styles-ar.css' : 'styles-en.css';
 
     if (existingLink) {
       existingLink.href = bundleName;
     } else {
-      let newLink = this.document.createElement('link');
-      // newLink.rel = 'stylesheet';
-      // newLink.type = 'text/css';
-      // newLink.id = 'langCss';
+      const newLink = this.document.createElement('link');
+      newLink.id = 'langCss';
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }
   }
-  activeLink: string = 'home'; // Default active link
+  activeLink: string = '';
 
-  setActive(link: string): void {
+  setActiveLink(link: string): void {
     this.activeLink = link;
   }
-  delayedNavigation(event: Event, link: string, url: string): void {
-    event.preventDefault();
-    this.setActive(link);
-    setTimeout(() => {
-      window.location.href = url;
-    }, 500); // Adjust the delay time as needed
-  }
+  // delayedNavigation(event: Event, link: string, url: string): void {
+  //   event.preventDefault();
+  //   this.setActiveLink(link);
+  //   setTimeout(() => {
+  //     window.location.href = url;
+  //   }, 600);
+  // }
 }
 
 

@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
 
     importProvidersFrom(HttpClientModule),
-    importProvidersFrom(AppTranslateModule.forRoot()), provideAnimationsAsync(),
-    
+    importProvidersFrom(AppTranslateModule.forRoot()),
+    provideAnimationsAsync(),
   ],
 };

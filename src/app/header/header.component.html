@@ -2,13 +2,13 @@
   <div class="container d-flex align-items-center" style="display: flex">
     <h1 class="logo mr-auto">
       <a href="http://advance-solution.org/index.html">
-        <img src="../../assets/advance-logo_1.png" />
+        <img src="../../assets/logo00.png" />
       </a>
     </h1>
 
 <nav class="nav-menu d-none d-lg-block">
   <ul>
-    <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
+    <!-- <li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
       <a
         href="http://localhost:4200/index.html"
         (click)="delayedNavigation($event, 'home', 'http://localhost:4200/index.html')"
@@ -17,44 +17,74 @@
         {{ "Home" | translate }}
       </a>
     </li>
-    <li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#about"
-        (click)="delayedNavigation($event, 'about', 'http://localhost:4200/#about')"
-        [ngClass]="{ active: activeLink === 'about' }"
-      >
-        {{ "About" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'services' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#services"
-        (click)="delayedNavigation($event, 'services', 'http://localhost:4200/#services')"
-        [ngClass]="{ active: activeLink === 'services' }"
-      >
-        {{ "Services" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'portfolio' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#portfolio"
-        (click)="delayedNavigation($event, 'portfolio', 'http://localhost:4200/#portfolio')"
-        [ngClass]="{ active: activeLink === 'portfolio' }"
-      >
-        {{ "Portfolio" | translate }}
-      </a>
-    </li>
-    <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
-      <a
-        href="http://localhost:4200/#contact"
-        (click)="delayedNavigation($event, 'contact', 'http://localhost:4200/#contact')"
-        [ngClass]="{ active: activeLink === 'contact' }"
-      >
-        {{ "Contact" | translate }}
-      </a>
-    </li>
+    <li> -->
+<li [@linkAnimation]="activeLink === 'home' ? 'active' : 'inactive'">
+  <a
+    href="http://localhost:4200/index.html"
+    (click)="setActiveLink('http://localhost:4200/index.html')"
+    [ngClass]="{ active: activeLink === 'home' }"
+  >
+    {{ "Home" | translate }}
+  </a>
+</li>
+
+<li [@linkAnimation]="activeLink === 'about' ? 'active' : 'inactive'">
+  <a
+    [routerLink]="['/', currentLang]"
+    fragment="about"
+ (click)="setActiveLink('http://localhost:4200/about')"
+    [ngClass]="{ active: activeLink === 'about' }"
+  >
+    {{ "About" | translate }}
+  </a>
+</li>
+   <li>
+  <a
+    [routerLink]="['/', currentLang]"
+    fragment="services"
+    (click)="setActiveLink('services')"
+    [ngClass]="{ active: activeLink === 'services' }"
+  >
+    {{ "Services" | translate }}
+  </a>
+</li>
+  <li>
+  <a
+    [routerLink]="['/', currentLang]"
+    fragment="portfolio"
+    (click)="setActiveLink('portfolio')"
+    [ngClass]="{ active: activeLink === 'portfolio' }"
+  >
+    {{ "Portfolio" | translate }}
+  </a>
+</li>
+
+  <li>
+  <a
+    [routerLink]="['/', currentLang]"
+    fragment="contact"
+    (click)="setActiveLink('contact')"
+    [ngClass]="{ active: activeLink === 'contact' }"
+  >
+    {{ "Contact" | translate }}
+  </a>
+</li>
   </ul>
 </nav>
+
+
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- <li>
@@ -85,5 +115,12 @@
         <mat-option (click)="changeLangage('ar')">Arabic</mat-option>
       </mat-select>
     </mat-form-field>  -->
-  </div>
-</header>
+    <!-- <li [@linkAnimation]="activeLink === 'contact' ? 'active' : 'inactive'">
+      <a
+        href="http://localhost:4200/#contact"
+        (click)="delayedNavigation($event, 'contact', 'http://localhost:4200/#contact')"
+        [ngClass]="{ active: activeLink === 'contact' }"
+      >
+        {{ "Contact" | translate }}
+      </a>
+    </li> -->

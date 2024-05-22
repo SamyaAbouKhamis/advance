@@ -1,21 +1,32 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, inject } from '@angular/core';
+import { Inject, Injectable, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TranslationService {
+export class TranslationService implements OnInit{
   TranslateService = inject(TranslateService);
 
   setDefaultLang(lang: string): void {
     this.TranslateService.setDefaultLang(lang);
   }
-
+  ngOnInit() {
+    this.route.paramMap.subscribe((params) => {
+      const lang = params.get('lang') || 'en';
+      this.changeLanguage(lang);
+    });
+  }
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     public translate: TranslateService,
     @Inject(DOCUMENT) public document: Document
-  ) {}
+  ) {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
   changeLanguage(lang: string) {
     let htmlTag = this.document.getElementsByTagName(
@@ -47,5 +58,8 @@ export class TranslationService {
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }
+  }
+  switchLanguage(lang: string) {
+    this.router.navigate([`/${lang}`]);
   }
 }
