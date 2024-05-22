@@ -9,10 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DOCUMENT, CommonModule } from '@angular/common';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
-
 import { DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -24,6 +22,8 @@ import {
   trigger,
 } from '@angular/animations';
 import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -36,7 +36,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
     MatInputModule,
     TranslateModule,
     FontAwesomeModule,
-
+    MatToolbarModule, 
     MatIconModule,
     MatExpansionModule,
     MatMenuModule,

@@ -1,69 +1,64 @@
 <div *ngIf="loading">
-    <div style="display: flex; flex-direction: column;text-align: center; 
+  <div style="display: flex; flex-direction: column;text-align: center; 
     align-items: center;
     justify-content: center;
     font-size: 24px;
     margin-top: 300px;">
-        <img src="../assets/advance-logo_1.png" alt="ShopyIq"
-            style="width: 150px;align-items: center;text-align: center;justify-items: center;">
-        <h4  style="color: #128ea6; font-weight: bold; align-items: center;">
-            Welcome to advance</h4>
-    </div>
-    <div class="spinner-container">
-        <mat-spinner  color="accent" style="    max-width: 55px;"></mat-spinner>
-      </div> 
+    <img src="../assets/logo00.png" alt="ShopyIq"
+      style="width: 150px;align-items: center;text-align: center;justify-items: center;">
+    <h4 style="color: #128ea6; font-weight: bold; align-items: center;">
+      Welcome </h4>
+  </div>
+  <div class="spinner-container">
+    <mat-spinner style="    max-width: 55px;"></mat-spinner>
+  </div>
 </div>
 <div *ngIf="!loading">
-    <!-- <router-outlet></router-outlet> -->
-
-
-   
-  
-    <div [@slideInOut]>
-          <app-back-to-top></app-back-to-top>
-    </div>
-    <br>
-
-    <app-topbar></app-topbar> 
-    <br>
-
-    <app-header></app-header>
-    <br>
-    <div [@fadeInOut]>
-       <app-hero></app-hero>   
-    </div>
+  <!-- <router-outlet></router-outlet> -->
+  <div [@slideInOut]>
+    <app-back-to-top></app-back-to-top>
+  </div>
   <br>
-    <app-featured></app-featured>
-    <br>
-    <div [@fadeInOut]>
-          <app-about></app-about>
-    </div>
+
+  <app-topbar></app-topbar>
+  <br>
+
+  <app-header></app-header>
+  <br>
   <div [@fadeInOut]>
-        <app-counts></app-counts>
+    <app-hero></app-hero>
+  </div>
+  <br>
+  <app-featured></app-featured>
+  <br>
+  <div [@fadeInOut]>
+    <app-about></app-about>
+  </div>
+  <div [@fadeInOut]>
+    <app-counts></app-counts>
   </div>
 
-    <br>
-    <div [@fadeInOut]>
-      <app-clients></app-clients>
+  <br>
+  <div [@fadeInOut]>
+    <app-clients></app-clients>
   </div>
-  
-    <br>
-    <div [@fadeInOut]>
-     <app-services></app-services>
+
+  <br>
+  <div [@fadeInOut]>
+    <app-services></app-services>
   </div>
-   
-    <br>
-    <div [@fadeInOut]>
-       <app-portfolio></app-portfolio>
+
+  <br>
+  <div [@fadeInOut]>
+    <app-portfolio></app-portfolio>
   </div>
- 
-    <br>
-    <div [@fadeInOut]>
-     <app-contact></app-contact>
+
+  <br>
+  <div [@fadeInOut]>
+    <app-contact></app-contact>
   </div>
-   
-    <br>
-    <div [@fadeInOut]>
-       <app-footer></app-footer>
+
+  <br>
+  <div [@fadeInOut]>
+    <app-footer></app-footer>
   </div>
- 
