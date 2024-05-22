@@ -26,7 +26,8 @@ import { RouterModule } from '@angular/router';
     MatMenuModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    TranslateModule,RouterLink
+    TranslateModule,
+    RouterLink,
   ],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css',
@@ -50,17 +51,31 @@ import { RouterModule } from '@angular/router';
     ]),
   ],
 })
-export class TopbarComponent  {
+export class TopbarComponent {
   faFacebook = faFacebook;
   faInstagram = faInstagram;
   envelopeIcon: IconDefinition = faEnvelope;
   phoneIcon: IconDefinition = faPhone;
   @Input() showAnimation = true;
-  
-
-  
+  currentLang: string = 'en';
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.activatedRoute.snapshot.fragment;
+        if (fragment) {
+          setTimeout(() => {
+            const element = document.getElementById(fragment);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        }
+        const urlSegments = this.router.url.split('/');
+        this.currentLang = urlSegments[1] || 'en';
+      }
+    });
+  }
   constructor(
-    
     private translateService: TranslateService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -72,18 +87,16 @@ export class TopbarComponent  {
   }
 
   changeLanguage(lang: string) {
-    const currentUrl = this.router.url.split('/').slice(2).join('/');
     const htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;
     htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
     this.translateService.setDefaultLang(lang);
     this.translateService.use(lang);
-    this.router.navigate([`/${lang}/${currentUrl}`]);
-
+    this.currentLang = lang;
+    this.router.navigate(['/', this.currentLang]);
     this.changeCssFile(lang);
   }
-
   changeCssFile(lang: string) {
     const headTag = this.document.getElementsByTagName(
       'head'
@@ -98,12 +111,9 @@ export class TopbarComponent  {
       existingLink.href = bundleName;
     } else {
       const newLink = this.document.createElement('link');
-      // newLink.rel = 'stylesheet';
-      // newLink.type = 'text/css';
       newLink.id = 'langCss';
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }
   }
-  
 }

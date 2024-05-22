@@ -1,7 +1,9 @@
-<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0" >
- 
+<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+  <button type="button" class="mobile-nav-toggle d-lg-none">
+    <i class="icofont-navigation-menu"></i>
+  </button>
 
-  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top" >
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
         <a> <fa-icon [icon]="envelopeIcon"></fa-icon> info-solution.org</a
@@ -12,8 +14,7 @@
           ></i
         ></a>
       </div>
-    <div class="social-links" style="padding-left: 4px"  >
-     
+    <div class="social-links" style="padding-left: 4px"  [@slideInOut]>
         <a><fa-icon [icon]="faFacebook"></fa-icon> </a>
 
         <a><fa-icon [icon]="faInstagram"></fa-icon> </a>
@@ -26,25 +27,29 @@
             [matMenuTriggerFor]="languageMenu"
             aria-label="Example icon-button with a changeLanguage"
           
-          
           >
             <span class="material-symbols-outlined">language</span>
           </button>
 
           <mat-menu #languageMenu="matMenu" >
-      
             <button mat-menu-item (click)="changeLanguage('en')">
               {{ "English" | translate }}
             </button>
             <button mat-menu-item (click)="changeLanguage('ar')">
               {{ "Arabic" | translate }}
             </button>
-          </mat-menu> 
-     
-        </a>
+          </mat-menu> </a
+        >
+      
       </div>
     </div>
+    <!-- <button (click)="changeLangage('ar')">Arabic</button>
+<button (click)="changeLangage('en')">English</button>
 
+<div>
+    <h3 >{{'Hello.lolo' | translate}}</h3>
+    <p >{{'Just Text '| translate}}</p>
+</div> -->
   </div>
  
   </body>
