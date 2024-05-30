@@ -139,14 +139,9 @@ section {
     background: #128ea6;
     top: 0;
     border-radius: 0px;
+    
   }
-  
-  .featured-services .icon {
-    margin-bottom: 1px;
-   
-  }
-  
- 
+
   
   .featured-services .title {
     font-weight: 700;
@@ -169,5 +164,13 @@ section {
   }
   
   .featured-services .icon-box:hover .icon .fa-icon {
+    color: #fff;
+  }
+  .featured-services .icon {
+    margin-bottom: 15px;
+    color: #128ea6;
+   
+  }
+  .featured-services .icon-box:hover .title a, .featured-services .icon-box:hover .icon {
     color: #fff;
   }

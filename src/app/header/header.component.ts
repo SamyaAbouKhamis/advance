@@ -17,16 +17,14 @@ import {
   animate,
   group,
   sequence,
-  state,
   style,
-  transition,
-  trigger,
+  
 } from '@angular/animations';
 import { AnimationBuilder, AnimationMetadata } from '@angular/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
-
+import { trigger, state, style as animationStyle, transition, animate as ngAnimate } from '@angular/animations';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -79,13 +77,31 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
         ]),
       ]),
       transition('active => inactive', [
+        group([
+          animate(
+            '300ms ease-out',
+            style({
+              transform: 'scale(1)',
+              opacity: 0.5, // add intermediate opacity for fade out
+              color: 'black',
+            })
+          ),
+          animate('300ms 100ms ease-out', style({ opacity: 1 })),
+        ]),
+      ]),
+    ]),
+    trigger('pageAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(100%)' }),
         animate(
           '300ms ease-out',
-          style({
-            transform: 'scale(1)',
-            opacity: 1,
-            color: 'black',
-          })
+          style({ opacity: 1, transform: 'translateX(0)' })
+        ),
+      ]),
+      transition(':leave', [
+        animate(
+          '300ms ease-in',
+          style({ opacity: 0, transform: 'translateX(-100%)' })
         ),
       ]),
     ]),
@@ -93,35 +109,37 @@ import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/rout
 })
 export class HeaderComponent {
   globeIcon = faGlobe;
-
   currentLang: string = 'en';
+  constructor(
+    private translateService: TranslateService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private animationBuilder: AnimationBuilder,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
+  }
+
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const fragment = this.activatedRoute.snapshot.fragment;
         if (fragment) {
           setTimeout(() => {
-            const element = document.getElementById(fragment);
+            const decodedFragment = decodeURIComponent(fragment);
+            const element = document.getElementById(decodedFragment);
             if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
+              this.scrollToElement(element);
             }
           }, 100);
         }
-        const urlSegments = this.router.url.split('/');
+        // Decode the entire URL to handle any double encoding issues
+        const decodedUrl = decodeURIComponent(this.router.url);
+        const urlSegments = decodedUrl.split('/');
         this.currentLang = urlSegments[1] || 'en';
       }
     });
-  }
-
-  constructor(
-    private translateService: TranslateService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-
-    @Inject(DOCUMENT) private document: Document
-  ) {
-    this.translateService.setDefaultLang('en');
-    this.translateService.use('en');
   }
 
   changeLanguage(lang: string) {
@@ -158,7 +176,23 @@ export class HeaderComponent {
 
   setActiveLink(link: string): void {
     this.activeLink = link;
+    const element = document.getElementById(link);
+    if (element) {
+      this.scrollToElement(element);
+    }
   }
+
+  private scrollToElement(element: HTMLElement): void {
+    const animation = this.animationBuilder.build([
+      style({ scrollTop: window.pageYOffset }),
+      animate('1s ease', style({ scrollTop: element.offsetTop }))
+    ]);
+
+    const player = animation.create(document.body);
+    player.onDone(() => element.scrollIntoView({ behavior: 'smooth' }));
+    player.play();
+  }
+}
   // delayedNavigation(event: Event, link: string, url: string): void {
   //   event.preventDefault();
   //   this.setActiveLink(link);
@@ -166,6 +200,6 @@ export class HeaderComponent {
   //     window.location.href = url;
   //   }, 600);
   // }
-}
+
 
 

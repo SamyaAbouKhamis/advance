@@ -1,8 +1,9 @@
 #header nav {
   background: #ffffff;
-  padding: 25px 0;
-       top: 22px
+      padding: 35px 12px;
+    top: 14px;
 }
+
 #header.header-scrolled {
   top: 0;
   padding: 15px;
@@ -160,7 +161,6 @@ body {
 }
   
 
- 
 
 #header.header-scrolled {
   top: 0;

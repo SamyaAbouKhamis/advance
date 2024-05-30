@@ -15,49 +15,58 @@
 </div>
 <div *ngIf="!loading">
   <!-- <router-outlet></router-outlet> -->
-  <div [@slideInOut]>
-    <app-back-to-top></app-back-to-top>
-  </div>
-  <br>
+<div class="scroll-animate" [@slideInOut]>
+  <app-back-to-top></app-back-to-top>
+</div>
+<br>
 
-  <app-topbar></app-topbar>
+<app-topbar></app-topbar>
 
-  <app-header></app-header>
-  <br>
-  <div [@fadeInOut]>
-    <app-hero></app-hero>
-  </div>
-  <br>
-  <app-featured></app-featured>
-  <br>
-  <div [@fadeInOut]>
-    <app-about></app-about>
-  </div>
-  <div [@fadeInOut]>
-    <app-counts></app-counts>
-  </div>
+<app-header></app-header>
+<br>
 
-  <br>
-  <div [@fadeInOut]>
-    <app-clients></app-clients>
-  </div>
+<div class="scroll-animate" [@fadeInOut]>
+  <app-hero></app-hero>
+</div>
+<br>
 
-  <br>
-  <div [@fadeInOut]>
-    <app-services></app-services>
-  </div>
+<app-featured></app-featured>
+<br>
 
-  <br>
-  <div [@fadeInOut]>
-    <app-portfolio></app-portfolio>
-  </div>
+<div  [@fadeInOut]>
+  <app-about></app-about>
+</div>
 
-  <br>
-  <div [@fadeInOut]>
-    <app-contact></app-contact>
-  </div>
+<div  [@fadeInOut]>
+  <app-counts></app-counts>
+</div>
 
-  <br>
-  <div [@fadeInOut]>
-    <app-footer></app-footer>
-  </div>
+<br>
+
+<div  [@fadeInOut]>
+  <app-clients></app-clients>
+</div>
+
+<br>
+
+<div  [@fadeInOut]>
+  <app-services></app-services>
+</div>
+
+<br>
+
+<div  [@fadeInOut]>
+  <app-portfolio></app-portfolio>
+</div>
+
+<br>
+
+<div  [@fadeInOut]>
+  <app-contact></app-contact>
+</div>
+
+<br>
+
+<div  [@fadeInOut]>
+  <app-footer></app-footer>
+</div>

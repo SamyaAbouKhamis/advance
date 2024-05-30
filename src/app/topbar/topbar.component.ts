@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { RouterModule } from '@angular/router';
@@ -28,6 +28,7 @@ import { RouterModule } from '@angular/router';
     MatProgressSpinnerModule,
     TranslateModule,
     RouterLink,
+    CommonModule
   ],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css',
@@ -116,5 +117,16 @@ export class TopbarComponent {
   }
   openLink(url: string): void {
     window.open(url, '_blank');
+  }
+  mobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+ 
+  activeLink = 'home';
+
+  setActiveLink(link: string) {
+    this.activeLink = link;
   }
 }
