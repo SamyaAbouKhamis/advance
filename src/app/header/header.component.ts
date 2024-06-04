@@ -25,6 +25,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { trigger, state, style as animationStyle, transition, animate as ngAnimate } from '@angular/animations';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -41,7 +42,7 @@ import { trigger, state, style as animationStyle, transition, animate as ngAnima
     MatMenuModule,
     MatButtonModule,
     CommonModule,
-    RouterLink,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -152,6 +153,7 @@ export class HeaderComponent {
     this.currentLang = lang;
     this.router.navigate(['/', this.currentLang]);
     this.changeCssFile(lang);
+    
   }
   changeCssFile(lang: string) {
     const headTag = this.document.getElementsByTagName(

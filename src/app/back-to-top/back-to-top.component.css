@@ -5,6 +5,7 @@
     display: none;
     background-color:#128ea6;
     color: aliceblue;
+    z-index: 1000;
   
     align-items: center;
     justify-content: center;

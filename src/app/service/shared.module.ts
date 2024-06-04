@@ -13,6 +13,7 @@ const modules = [
   CommonModule,
   TranslateModule,
   FormsModule,
+  
 ];
 @NgModule({
  

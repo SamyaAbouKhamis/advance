@@ -21,7 +21,7 @@ export const routes: Routes = [
     path: ':lang',
     component: AppComponent,
     children: [
-      { path: 'header', component: TopbarComponent },
+      { path: '', component: TopbarComponent },
       { path: 'header', component: HeaderComponent },
       { path: 'hero', component: HeroComponent },
       { path: 'featured', component: FeaturedComponent },

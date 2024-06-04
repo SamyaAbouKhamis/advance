@@ -114,21 +114,12 @@ h6 {
   font-size: 14px;
   transition: all 0.5s;
   color: #fff;
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
-   
+  line-height: 20px;
+
 }
 
-#topbar.topbar-scrolled {
-  top: -40px;
-}
 
-#topbar .contact-info a {
-  line-height: 1;
-  color: #fff;
-  transition: 0.3s;
-}
+
 
 #topbar .contact-info a:hover {
   text-decoration: underline;
@@ -139,17 +130,7 @@ h6 {
   margin-left: 15px;
 }
 
-#topbar .contact-info i:first-child {
-  margin-left: 0;
-}
 
-#topbar .social-links {
-  color: rgba(255, 255, 255, 0.6);
-  padding-left: 15px;
-  display: inline-block;
-  line-height: 1px;
-  transition: 0.3s;
-}
 
 #topbar .social-links a:hover {
   color: #fff;
@@ -164,48 +145,9 @@ h6 {
   align-items: center;
 }
 
-#topbar .contact-info a {
-  color: #fff;
-  margin-right: 15px;
-  
-}
-
-#topbar .social-links a {
-  color: #fff;
-  margin-right: 15px;
-    color: rgba(255, 255, 255, 0.6);
-    padding-left: 15px;
-    display: inline-block;
-    line-height: 1px;
-    transition: 0.3s;
-  }
-  #topbar .social-links a {
-    color: rgba(255, 255, 255, 0.6);
-    padding-left: 15px;
-    display: inline-block;
-    line-height: 1px;
-    transition: 0.3s;
-  }
-  
-  #topbar .social-links a:hover {
-    color: #fff;
-  }
-  .mr-auto, .mx-auto {
-    margin-right: auto !important;
-}
 
 
 
-.btn {
- 
 
-  padding: 12px ;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+
 

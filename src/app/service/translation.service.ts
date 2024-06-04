@@ -6,55 +6,54 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root',
 })
-export class TranslationService implements OnInit{
+export class TranslationService implements OnInit {
   TranslateService = inject(TranslateService);
-
+  currentLang: string = 'en';
   setDefaultLang(lang: string): void {
     this.TranslateService.setDefaultLang(lang);
   }
   ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      const lang = params.get('lang') || 'en';
-      this.changeLanguage(lang);
-    });
+    const decodedUrl = decodeURIComponent(this.router.url);
+    const urlSegments = decodedUrl.split('/');
+    this.currentLang = urlSegments[1] || 'en';
   }
   constructor(
-    private route: ActivatedRoute,
+    private translateService: TranslateService,
     private router: Router,
-    public translate: TranslateService,
-    @Inject(DOCUMENT) public document: Document
+    private activatedRoute: ActivatedRoute,
+
+    @Inject(DOCUMENT) private document: Document
   ) {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
   }
 
   changeLanguage(lang: string) {
-    let htmlTag = this.document.getElementsByTagName(
+    const htmlTag = this.document.getElementsByTagName(
       'html'
     )[0] as HTMLHtmlElement;
     htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    this.TranslateService.setDefaultLang(lang);
-    this.TranslateService.use(lang);
+    this.translateService.setDefaultLang(lang);
+    this.translateService.use(lang);
+    this.currentLang = lang;
+    this.router.navigate(['/', this.currentLang]);
     this.changeCssFile(lang);
   }
-
   changeCssFile(lang: string) {
-    let headTag = this.document.getElementsByTagName(
+    const headTag = this.document.getElementsByTagName(
       'head'
     )[0] as HTMLHeadElement;
-    let existingLink = this.document.getElementById(
+    const existingLink = this.document.getElementById(
       'langCss'
     ) as HTMLLinkElement;
 
-    let bundleName = lang === 'ar' ? 'arabicStyle.css' : 'englishStyle.css';
+    const bundleName = lang === 'ar' ? 'styles-ar.css' : 'styles-en.css';
 
     if (existingLink) {
       existingLink.href = bundleName;
     } else {
-      let newLink = this.document.createElement('link');
-      // newLink.rel = 'stylesheet';
-      // newLink.type = 'text/css';
-      // newLink.id = 'langCss';
+      const newLink = this.document.createElement('link');
+      newLink.id = 'langCss';
       newLink.href = bundleName;
       headTag.appendChild(newLink);
     }

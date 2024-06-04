@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Input, NgZone, OnInit, Optional, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, Input, NgModule, NgZone, OnInit, Optional, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
@@ -13,7 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TopbarComponent } from './topbar/topbar.component';
@@ -55,7 +55,7 @@ import {
     MatProgressSpinnerModule,
     TopbarComponent,
     GoogleMapsModule,
-    BackToTopComponent,
+    BackToTopComponent,ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

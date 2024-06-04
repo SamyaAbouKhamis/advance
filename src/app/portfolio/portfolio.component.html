@@ -1,83 +1,79 @@
 <section id="portfolio" class="portfolio">
-    <div class="container aos-init" data-aos="fade-up">
+  <div class="container aos-init" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Portfolio</h2>
+      <h3>{{'Check our '|translate}}<span style="color: #128ea6">Portfolio</span></h3>
+    </div>
 
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <h3>Check our <span style="color: #128ea6;">Portfolio</span></h3>
-       
+    <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li
+            (click)="filterImages('All')"
+            [class.active]="selectedCategory === 'ALL'"
+          >
+            ALL
+          </li>
+          <li
+            (click)="filterImages('Cameras')"
+            [class.active]="selectedCategory === 'Cameras'"
+          >
+            Cameras
+          </li>
+          <li
+            (click)="filterImages('Servers')"
+            [class.active]="selectedCategory === 'Servers'"
+          >
+            Servers
+          </li>
+          <li
+            (click)="filterImages('Networks')"
+            [class.active]="selectedCategory === 'Networks'"
+          >
+            Networks
+          </li>
+        </ul>
       </div>
+    </div>
+    <div class="container aos-init" data-aos="zoom-in">
+      <div class="row">
+        <div class="mobile">
+          <swiper-container
+            [config]="swiperConfig"
+            style="width: 100%; height: 95%"
+            thumbs-swiper=".mySwiper2"
+          >
+            <swiper-slide *ngFor="let image of filteredImages">
+              <div>
+                <img [src]="image.src" class="img-fluid" alt="Image" />
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
 
-      <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Cameras</li>
-            <li data-filter=".filter-card">Serveres</li>
-            <li data-filter=".filter-web">Networks</li>
-          </ul>
+        <div class="disc">
+          <swiper-container
+            dir="auto"
+            space-between="7"
+            navigation="true"
+            slides-per-view="3"
+            class="mySwiper2"
+            watch-slides-progress="true"
+            style="
+              --swiper-navigation-color: #fff;
+              --swiper-pagination-color: #fff;
+              width: 100%;
+              height: 95%;
+            "
+          >
+            <swiper-slide *ngFor="let image of filteredImages">
+              <div>
+                <img [src]="image.src" class="img-fluid" alt="Image" />
+              </div>
+            </swiper-slide>
+          </swiper-container>
         </div>
       </div>
-
-     
-      <div class="container aos-init" data-aos="zoom-in">
-
-        <div class="row">
-          
-     <swiper-container
-  dir="rtl"
-  space-between="7"
-  navigation="true"
-  slides-per-view="3"
-  style="--swiper-navigation-color:#fff; --swiper-pagination-color:#fff; width: 100%; height: 350px;">
-  
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-1.jpg" class="img-fluid">
     </div>
-  </swiper-slide>
-
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-2.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-3.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-4.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-  
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-5.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-
-  
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-6.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-  
-   
-  <swiper-slide>
-    <div>
-      <img src="../../assets/portfolio-7.jpg" class="img-fluid">
-    </div>
-  </swiper-slide>
-</swiper-container>
-
- </div>
- </div>
-      </div>
-
- 
-  </section>
+  </div>
+</section>
