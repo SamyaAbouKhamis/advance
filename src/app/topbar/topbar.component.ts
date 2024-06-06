@@ -69,8 +69,9 @@ export class TopbarComponent {
             }
           }, 100);
         }
+         const decodedUrl = decodeURIComponent(this.router.url);
         const urlSegments = this.router.url.split('/');
-        this.currentLang = urlSegments[1] || 'en';
+        // this.currentLang = urlSegments[1] || 'en';
       }
     });
   }

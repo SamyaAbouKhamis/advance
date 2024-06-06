@@ -111,16 +111,7 @@ import { trigger, state, style as animationStyle, transition, animate as ngAnima
 export class HeaderComponent {
   globeIcon = faGlobe;
   currentLang: string = 'en';
-  constructor(
-    private translateService: TranslateService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private animationBuilder: AnimationBuilder,
-    @Inject(DOCUMENT) private document: Document
-  ) {
-    this.translateService.setDefaultLang('en');
-    this.translateService.use('en');
-  }
+
 
   
   ngOnInit() {
@@ -143,6 +134,16 @@ export class HeaderComponent {
         // this.currentLang = urlSegments[2] || 'ar';
       }
     });
+  }
+    constructor(
+    private translateService: TranslateService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private animationBuilder: AnimationBuilder,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
   }
 
   changeLanguage(lang: string) {
