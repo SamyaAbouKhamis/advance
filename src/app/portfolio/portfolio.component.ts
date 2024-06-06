@@ -20,7 +20,7 @@ interface Image {
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule,TranslateModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -40,11 +40,10 @@ export class PortfolioComponent implements OnInit {
   images: Image[] = [
     { src: 'assets/camera1.jpg', category: 'Cameras' },
     { src: 'assets/camea2.jpg', category: 'Cameras' },
-    { src: '../../assets/portfolio-2.jpg', category: 'Servers' },
+    { src: '../../assets/camera/portfolio-2.jpg', category: 'Servers' },
     { src: '../../assets/about.jpg', category: 'Servers' },
-    { src: '../../assets/portfolio-3.jpg', category: 'Networks' },
-    { src: '../../assets/portfolio-1.jpg', category: 'Networks' },
-    
+    { src: '../../assets/camera/portfolio-3.jpg', category: 'Networks' },
+    { src: '../../assets/camera/portfolio-1.jpg', category: 'Networks' },
   ];
   filteredImages: Image[] = [...this.images];
   selectedCategory: string = 'All';

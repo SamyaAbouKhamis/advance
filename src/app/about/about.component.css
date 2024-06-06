@@ -76,7 +76,7 @@
 .about .content p:last-child {
   margin-bottom: 0;
 }
-.image-slider {
+/* .image-slider {
   text-align: center;
 }
 
@@ -85,7 +85,7 @@
   height: auto;
   display: block;
   margin: 0 auto;
-}
+} */
 .hm-img-txt {
   animation: 40s autoplay1 infinite;
   opacity: 0;
@@ -151,4 +151,14 @@
   height: 10px;
   transition: 0.9s;
   background-color: #128ea6;
+}
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

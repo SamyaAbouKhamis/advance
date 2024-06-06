@@ -11,22 +11,47 @@ import { TranslateModule } from '@ngx-translate/core';
 
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('1s', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [animate('1s', style({ opacity: 0 }))]),
-    ]),
-  ],
+
 })
 export class AboutComponent implements OnInit, OnDestroy {
   simpleIcon = faSmile;
   images: string[] = [
-    '../../assets/about.jpg',
-    '../../assets/camera1.jpg',
-    '../../assets/about.jpg',
+    '../../assets/work/1.jpg',
+    '../../assets/work/2.jpg',
+    '../../assets/work/3.jpg',
+    '../../assets/work/4.jpg',
+
+    // '../../assets/work/5.jpg',
+    // '../../assets/work/6.jpg',
+    '../../assets/work/7.jpg',
+    '../../assets/work/8.jpg',
+
+    '../../assets/work/9.jpg',
+    '../../assets/work/10.jpg',
+
+    '../../assets/work/11.jpg',
+    '../../assets/work/12.jpg',
+
+    '../../assets/work/13.jpg',
+
+    '../../assets/work/14.jpg',
+    '../../assets/work/15.jpg',
+    '../../assets/work/16.jpg',
+    '../../assets/work/17.jpg',
+    '../../assets/work/18.jpg',
+    '../../assets/work/19.jpg',
+    '../../assets/work/20.jpg',
+    '../../assets/work/21.jpg',
+    '../../assets/work/22.jpg',
+    '../../assets/work/23.jpg',
+    '../../assets/work/24.jpg',
+    '../../assets/work/25.jpg',
+    '../../assets/work/26.jpg',
+    '../../assets/work/27.jpg',
+    '../../assets/work/28.jpg',
+    '../../assets/work/29.jpg',
+    '../../assets/work/30.jpg',
+    '../../assets/work/31.jpg',
     // Add more image paths here
   ];
   currentImage: string = this.images[0];

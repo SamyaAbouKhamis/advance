@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 import {
   HttpClient,
@@ -12,21 +11,16 @@ import {
   TranslateLoader,
   TranslateModule,
   TranslatePipe,
-
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 import { AppComponent } from '../app.component';
 import { TopbarComponent } from '../topbar/topbar.component';
 
-
-
 const HttpLoaderFactory = (http: HttpClient) =>
   new TranslateHttpLoader(http, './assets/i18n/', '.json');
 
-
-
-const httpCompilerFactory=()=> new TranslateMessageFormatCompiler();
+const httpCompilerFactory = () => new TranslateMessageFormatCompiler();
 
 const translateLoader: Provider = {
   provide: TranslateLoader,
@@ -34,11 +28,10 @@ const translateLoader: Provider = {
   deps: [HttpClient],
 };
 
-const translateCompiler:Provider={
-  provide:TranslateCompiler,
-  useFactory:httpCompilerFactory,
-}
-
+const translateCompiler: Provider = {
+  provide: TranslateCompiler,
+  useFactory: httpCompilerFactory,
+};
 
 @NgModule({
   imports: [
@@ -72,5 +65,4 @@ export class AppTranslateModule {
       isolate: false,
     });
   }
-  
 }

@@ -42,7 +42,7 @@ import { trigger, state, style as animationStyle, transition, animate as ngAnima
     MatMenuModule,
     MatButtonModule,
     CommonModule,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
@@ -122,6 +122,7 @@ export class HeaderComponent {
     this.translateService.use('en');
   }
 
+  
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -138,7 +139,8 @@ export class HeaderComponent {
         // Decode the entire URL to handle any double encoding issues
         const decodedUrl = decodeURIComponent(this.router.url);
         const urlSegments = decodedUrl.split('/');
-        this.currentLang = urlSegments[1] || 'en';
+        // this.currentLang = urlSegments[1] || 'en';
+        // this.currentLang = urlSegments[2] || 'ar';
       }
     });
   }
@@ -153,7 +155,6 @@ export class HeaderComponent {
     this.currentLang = lang;
     this.router.navigate(['/', this.currentLang]);
     this.changeCssFile(lang);
-    
   }
   changeCssFile(lang: string) {
     const headTag = this.document.getElementsByTagName(
@@ -184,14 +185,17 @@ export class HeaderComponent {
     }
   }
 
+
   private scrollToElement(element: HTMLElement): void {
     const animation = this.animationBuilder.build([
       style({ scrollTop: window.pageYOffset }),
-      animate('1s ease', style({ scrollTop: element.offsetTop }))
+      animate('1s ease', style({ scrollTop: element.offsetTop })),
     ]);
 
     const player = animation.create(document.body);
-    player.onDone(() => element.scrollIntoView({ behavior: 'smooth' }));
+    player.onDone(() =>
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    );
     player.play();
   }
 }
