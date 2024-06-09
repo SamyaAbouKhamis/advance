@@ -186,6 +186,6 @@ body {
 }
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
-    background-color: #fff !important;
+    background-color: #e5f1f4 !important;
     height: 100px;
 }

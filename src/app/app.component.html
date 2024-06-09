@@ -6,11 +6,10 @@
     margin-top: 300px;">
     <img src="../assets/logo00.png" alt="ShopyIq"
       style="width: 150px;align-items: center;text-align: center;justify-items: center;">
-    <h4 style="color: #128ea6; font-weight: bold; align-items: center;">
-      Welcome </h4>
+   
   </div>
   <div class="spinner-container">
-    <mat-spinner style="    max-width: 55px;"></mat-spinner>
+    <mat-spinner style="max-width: 55px;" ></mat-spinner>
   </div>
 </div>
 <div *ngIf="!loading">
@@ -20,7 +19,7 @@
 </div>
 <br>
 
-<app-topbar></app-topbar>
+
 <app-header></app-header>
 
 <br>
@@ -58,6 +57,12 @@
 
 <div  [@fadeInOut]>
   <app-portfolio></app-portfolio>
+</div>
+
+<br>
+
+<div  [@fadeInOut]>
+  <app-products></app-products>
 </div>
 
 <br>

@@ -14,6 +14,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { BackToTopComponent } from './back-to-top/back-to-top.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
+import { ProductsComponent } from './products/products.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'en', pathMatch: 'full' },
@@ -30,6 +31,7 @@ export const routes: Routes = [
       { path: 'clients', component: ClientsComponent },
       { path: 'services', component: ServicesComponent },
       { path: 'portfolio', component: PortfolioComponent },
+      { path: 'products', component: ProductsComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'footer', component: FooterComponent },
       { path: 'back-to-top', component: BackToTopComponent },

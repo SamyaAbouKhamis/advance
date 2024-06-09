@@ -28,6 +28,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { ProductsComponent } from './products/products.component';
 
 
 
@@ -48,6 +49,7 @@ import {
     PortfolioComponent,
     ContactComponent,
     FooterComponent,
+    ProductsComponent,
     SplashScreenComponent,
     MatProgressBarModule,
     FormsModule,
