@@ -34,7 +34,7 @@
 }
 .navbar a {
   text-decoration: none;
-  color:#0a95b0 ; /* Default color */
+  color:#121313 ; /* Default color */
 }
 .bg-body-tertiary {
   --bs-bg-opacity: 1;
@@ -144,6 +144,6 @@ body {
 }
 .bg-body-tertiary {
     --bs-bg-opacity: 1;
-    background-color: #e5f1f4 !important;
-    height: 100px;
+    background-color: #ffffff !important;
+    height: 80px;
 }

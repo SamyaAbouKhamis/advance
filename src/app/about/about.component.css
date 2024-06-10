@@ -1,14 +1,15 @@
 #about {
-  background: #fff;
+  background:   #e7f1fd;
   padding: 0 0 30px 0;
   color: #444444;
   font-size: 14px;
-  background: #ffffff;
+
   padding: 60px 0;
 }
 .section-title {
   text-align: center;
   padding-bottom: 30px;
+
 }
 .section-title h2 {
   font-size: 13px;
@@ -16,7 +17,7 @@
   font-weight: 700;
   padding: 8px 20px;
   margin: 0;
-  background: #e7f1fd;
+  background: #fff;
   color: #128ea6;
   display: inline-block;
   text-transform: uppercase;
