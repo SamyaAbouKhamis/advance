@@ -19,9 +19,22 @@
       margin: 15px 0 0 0;
       font-size: 32px;
       font-weight: 700;
-      color: #128ea6;}
+      color: #0b0b0b;}
 
       .section-title p {
         margin: 15px auto 0 auto;
         font-weight: 60;
+    }
+    .slick-slider.brandslider {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .swiper-slide img {
+      width: 100%;
+      display: block;
+    }
+    .contact img:hover {
+      transform: scale(1.10);
     }

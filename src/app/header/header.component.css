@@ -13,7 +13,7 @@
 .navbar a {
   display: block;
   position: relative;
-  color: #222222;
+  color: #fcf6f6;
   transition: 0.3s;
   font-size: 18px;
   font-weight: 600;
@@ -34,11 +34,11 @@
 }
 .navbar a {
   text-decoration: none;
-  color: inherit; /* Default color */
+  color:#0a95b0 ; /* Default color */
 }
 .bg-body-tertiary {
   --bs-bg-opacity: 1;
-  background-color: #fff !important;
+  background-color: #ffffff !important;
 }
 /*----------------------------------------------------------------
 
@@ -106,48 +106,6 @@ body {
   }
 }
 
-/*--------------------------------------------------------------
-  # Back to top button
-  --------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  display: none;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-}
-
-.back-to-top i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: #128ea6;
-  color: #fff;
-  transition: all 0.4s;
-}
-
-.back-to-top i:hover {
-  background: #116d80;
-  color: #fff;
-}
-
-/*--------------------------------------------------------------
-  # Disable aos animation delay on mobile devices
-  --------------------------------------------------------------*/
-.mr-auto,
-.mx-auto {
-  margin-right: auto !important;
-  flex: auto;
-}
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
 
 #header {
   background: #fff;
@@ -174,7 +132,7 @@ body {
 }
 
 #header .logo a {
-  color: #222222;
+  color: #f1efef;
 }
 
 #header .logo a span {

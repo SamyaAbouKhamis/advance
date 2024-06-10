@@ -3,23 +3,40 @@
 
       <div class="section-title">
         <h2>PRODUCTS</h2>
-        <h3><span> OUR PRODUCTS </span></h3>
-        <p>For the freedom you need to truly grow.</p>
-      </div>
-
     
-
-      <div class="row aos-init" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-6 " >
-          <div id="map" style="height: 100%; width: 100%;"></div>
-
-
       
       </div>
-       
+      <div class="container aos-init" data-aos="zoom-in">
+        <div class="row">
+      
+  
+          <div class="disc">
+            <swiper-container
+              dir="auto"
+              space-between="7"
+              navigation="true"
+              slides-per-view="3"
+              class="mySwiper2"
+              watch-slides-progress="true"
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+                width: 100%;
+                height: 95%;
+              "
+            >
+              <swiper-slide *ngFor="let image of filteredImages">
+                <div>
+                  <img [src]="image.src" class="img-fluid" alt="Image" />
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+      </div>
     
 
-      </div>
+ 
 
     </div>
 </section>

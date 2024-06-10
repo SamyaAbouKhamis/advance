@@ -159,14 +159,14 @@
   #footer .copyright {
     text-align: center;
     float: left;
-    color: #128ea6;
+    color: #0a0a0a;
   }
-  
+ 
   #footer .credits {
     float: right;
     text-align: center;
     font-size: 13px;
-    color: #9b0b0b;
+    color: #121111;
   }
   
   @media (max-width: 768px) {
